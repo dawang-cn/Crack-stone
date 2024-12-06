@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CentralComm</title>
+  <link rel="stylesheet" href="Dashboard-Styles.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li class="centralcomm">
+          <div class="centralcomm-box"><a href="#">CentralComm</a></div>
+        </li>
+      </ul>
+      <div class="menu-divider"></div>
+      <ul class="top-menu">
+        <li><a href="Receiving-Section-Staff.html"><i class="home-icon"></i> Home</a></li>
+        <li><a href="Receiving-Archived.html"><i class="archive-icon"></i> Archived</a></li>
+        <li><a href="Receiving-Notifications.html"><i class="notification-icon"></i> Notifications</a></li>
+      </ul>
+      <ul class="bottom-menu">
+        <li><a href="Receiving-Contact-Us.html"><i class="contact-icon"></i> Contact Us</a></li>
+        <li><a href="select-user-type.html"><i class="logout-icon"></i> Log Out</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="main-content">
+        <div class="home-section">
+          <header>
+            <div class="greeting">Let's get things done, <strong>Erin!</strong></div>
+          </header>
+
+          <div class="menu-divider2"></div>
+
+          <div class="top-bar">
+            <button class="new-item-button" onclick="addNewItemTable()">New Item</button>
+            <input class="search-bar" id="search-bar" type="text" placeholder="Search">
+          </div>
+          <div id="drawer-template" style="display: none;">
+            <div class="drawer">
+              <h4>Receiving</h4>
+              <div class="receiving-list-container">
+                <table class="receiving-list"  style="margin: 20px auto; border-collapse: collapse; width: 10%;">
+                  <thead>
+                    <tr>
+                      <th> </th>
+                      <th>Time Received</th>
+                      <th>Date Received</th>
+                      <th>Ctrl No.</th>
+                      <th>From</th>
+                      <th>Office</th>
+                      <th>Subject</th>
+                    </tr>
+                  </thead>
+                  <form action="" id="rec_sec_item">
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox" onclick="highlightRow(this)"> </td>
+                      <td><input id="enter_time" type="time" class="task-input" name="time" oninput="updateStatusBar(this)"></td>
+                      <td><input id="enter_date" type="date" class="task-input" name="date" oninput="updateStatusBar(this)"></td>
+                      <td><input id="enter_ctrlnum" type="text" class="task-input" placeholder="Enter Ctrl No." oninput="updateStatusBar(this)"></td>
+                      <td><input id="enter_from" type="text" class="task-input" placeholder="Enter From" oninput="updateStatusBar(this)"></td>
+                      <td><form>
+                        <input type="text" class="task-input" id="enter_office" list="suggestions" placeholder="Enter Office">
+                        <datalist id="suggestions">
+                          <option value="Vice Mayor's Office">
+                            <option value="Sangguniang Panlungsod">
+                            <option value="CAO">
+                            <option value="CASSO">
+                            <option value="CADMO">
+                            <option value="CBO">
+                            <option value="CEPMO">
+                            <option value="CHRMO">
+                            <option value="CLO">
+                            <option value="CPDSO">
+                            <option value="CTO">
+                            <option value="GSO">
+                            <option value="CBAO">
+                            <option value="CEO">
+                            <option value="CSWDO">
+                            <option value="HSO">
+                            <option value="LCR">
+                            <option value="CVAO">
+                            <option value="DEPED">
+                            <option value="COA">
+                            <option value="MTCC">
+                            <option value="RTCC">
+                            <option value="Prosecutor's Office">
+                            <option value="DILG-City">
+                            <option value="BCPO">
+                            <option value="BFP">
+                            <option value="BJMP">
+                            <option value="PESO">
+                            <option value="PIO">
+                            <option value="PLD">
+                            <option value="PLEB">
+                            <option value="POSD">
+                            <option value="SSD">
+                            <option value="PDAO">
+                            <option value="MITD">
+                            <option value="CCTV">
+                            <option value="CDRRMO">
+                            <option value="LIBRARY">
+                            <option value="PERSONAL STAFF">
+                        </datalist>
+                      </form>
+                      </td>
+                      <td><input id="enter_sub" type="text" class="task-input" placeholder="Enter Subject" oninput="updateStatusBar(this)"></td>
+                    </tr>
+                  </tbody>
+                  </form>
+                  <form action="" id="rec_sec_item1">
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox" onclick="highlightRow(this)"> </td>
+                        <td><input id="enter_time1" type="time" class="task-input" name="time" oninput="updateStatusBar(this)"></td>
+                        <td><input id="enter_date1" type="date" class="task-input" name="date" oninput="updateStatusBar(this)"></td>
+                        <td><input id="enter_ctrlnum1" type="text" class="task-input" placeholder="Enter Ctrl No." oninput="updateStatusBar(this)"></td>
+                        <td><input id="enter_from1" type="text" class="task-input" placeholder="Enter From" oninput="updateStatusBar(this)"></td>
+                        <td><form>
+                          <input type="text" class="task-input" id="enter_office1" list="suggestions" placeholder="Enter Office">
+                          <datalist id="suggestions">
+                            <option value="Vice Mayor's Office">
+                              <option value="Sangguniang Panlungsod">
+                              <option value="CAO">
+                              <option value="CASSO">
+                              <option value="CADMO">
+                              <option value="CBO">
+                              <option value="CEPMO">
+                              <option value="CHRMO">
+                              <option value="CLO">
+                              <option value="CPDSO">
+                              <option value="CTO">
+                              <option value="GSO">
+                              <option value="CBAO">
+                              <option value="CEO">
+                              <option value="CSWDO">
+                              <option value="HSO">
+                              <option value="LCR">
+                              <option value="CVAO">
+                              <option value="DEPED">
+                              <option value="COA">
+                              <option value="MTCC">
+                              <option value="RTCC">
+                              <option value="Prosecutor's Office">
+                              <option value="DILG-City">
+                              <option value="BCPO">
+                              <option value="BFP">
+                              <option value="BJMP">
+                              <option value="PESO">
+                              <option value="PIO">
+                              <option value="PLD">
+                              <option value="PLEB">
+                              <option value="POSD">
+                              <option value="SSD">
+                              <option value="PDAO">
+                              <option value="MITD">
+                              <option value="CCTV">
+                              <option value="CDRRMO">
+                              <option value="LIBRARY">
+                              <option value="PERSONAL STAFF">
+                          </datalist>
+                        </form>
+                        </td>
+                        <td><input id="enter_sub1" type="text" class="task-input" placeholder="Enter Subject" oninput="updateStatusBar(this)"></td>
+                      </tr>
+                    </tbody>
+                    </form>
+                    <form action="" id="rec_sec_item2">
+                      <tbody>
+                        <tr>
+                          <td><input type="checkbox" onclick="highlightRow(this)"> </td>
+                          <td><input id="enter_time2" type="time" class="task-input" name="time" oninput="updateStatusBar(this)"></td>
+                          <td><input id="enter_date2" type="date" class="task-input" name="date" oninput="updateStatusBar(this)"></td>
+                          <td><input id="enter_ctrlnum2" type="text" class="task-input" placeholder="Enter Ctrl No." oninput="updateStatusBar(this)"></td>
+                          <td><input id="enter_from2" type="text" class="task-input" placeholder="Enter From" oninput="updateStatusBar(this)"></td>
+                          <td><form>
+                            <input type="text" class="task-input" id="enter_office2" list="suggestions" placeholder="Enter Office">
+                            <datalist id="suggestions">
+                              <option value="Vice Mayor's Office">
+                                <option value="Sangguniang Panlungsod">
+                                <option value="CAO">
+                                <option value="CASSO">
+                                <option value="CADMO">
+                                <option value="CBO">
+                                <option value="CEPMO">
+                                <option value="CHRMO">
+                                <option value="CLO">
+                                <option value="CPDSO">
+                                <option value="CTO">
+                                <option value="GSO">
+                                <option value="CBAO">
+                                <option value="CEO">
+                                <option value="CSWDO">
+                                <option value="HSO">
+                                <option value="LCR">
+                                <option value="CVAO">
+                                <option value="DEPED">
+                                <option value="COA">
+                                <option value="MTCC">
+                                <option value="RTCC">
+                                <option value="Prosecutor's Office">
+                                <option value="DILG-City">
+                                <option value="BCPO">
+                                <option value="BFP">
+                                <option value="BJMP">
+                                <option value="PESO">
+                                <option value="PIO">
+                                <option value="PLD">
+                                <option value="PLEB">
+                                <option value="POSD">
+                                <option value="SSD">
+                                <option value="PDAO">
+                                <option value="MITD">
+                                <option value="CCTV">
+                                <option value="CDRRMO">
+                                <option value="LIBRARY">
+                                <option value="PERSONAL STAFF">
+                            </datalist>
+                          </form>
+                          </td>
+                          <td><input id="enter_sub2" type="text" class="task-input" placeholder="Enter Subject" oninput="updateStatusBar(this)"></td>
+                        </tr>
+                      </tbody>
+                      </form>
+                      <form action="" id="rec_sec_item3">
+                        <tbody>
+                          <tr>
+                            <td><input type="checkbox" onclick="highlightRow(this)"> </td>
+                            <td><input id="enter_time3" type="time" class="task-input" name="time" oninput="updateStatusBar(this)"></td>
+                            <td><input id="enter_date3" type="date" class="task-input" name="date" oninput="updateStatusBar(this)"></td>
+                            <td><input id="enter_ctrlnum3" type="text" class="task-input" placeholder="Enter Ctrl No." oninput="updateStatusBar(this)"></td>
+                            <td><input id="enter_from3" type="text" class="task-input" placeholder="Enter From" oninput="updateStatusBar(this)"></td>
+                            <td><form>
+                              <input type="text" class="task-input" id="enter_office3" list="suggestions" placeholder="Enter Office">
+                              <datalist id="suggestions">
+                                <option value="Vice Mayor's Office">
+                                  <option value="Sangguniang Panlungsod">
+                                  <option value="CAO">
+                                  <option value="CASSO">
+                                  <option value="CADMO">
+                                  <option value="CBO">
+                                  <option value="CEPMO">
+                                  <option value="CHRMO">
+                                  <option value="CLO">
+                                  <option value="CPDSO">
+                                  <option value="CTO">
+                                  <option value="GSO">
+                                  <option value="CBAO">
+                                  <option value="CEO">
+                                  <option value="CSWDO">
+                                  <option value="HSO">
+                                  <option value="LCR">
+                                  <option value="CVAO">
+                                  <option value="DEPED">
+                                  <option value="COA">
+                                  <option value="MTCC">
+                                  <option value="RTCC">
+                                  <option value="Prosecutor's Office">
+                                  <option value="DILG-City">
+                                  <option value="BCPO">
+                                  <option value="BFP">
+                                  <option value="BJMP">
+                                  <option value="PESO">
+                                  <option value="PIO">
+                                  <option value="PLD">
+                                  <option value="PLEB">
+                                  <option value="POSD">
+                                  <option value="SSD">
+                                  <option value="PDAO">
+                                  <option value="MITD">
+                                  <option value="CCTV">
+                                  <option value="CDRRMO">
+                                  <option value="LIBRARY">
+                                  <option value="PERSONAL STAFF">
+                              </datalist>
+                            </form>
+                            </td>
+                            <td><input id="enter_sub3" type="text" class="task-input" placeholder="Enter Subject" oninput="updateStatusBar(this)"></td>
+                          </tr>
+                        </tbody>
+                        </form>
+                        <form action="" id="rec_sec_item4">
+                          <tbody>
+                            <tr>
+                              <td><input type="checkbox" onclick="highlightRow(this)"> </td>
+                              <td><input id="enter_time4" type="time" class="task-input" name="time" oninput="updateStatusBar(this)"></td>
+                              <td><input id="enter_date4" type="date" class="task-input" name="date" oninput="updateStatusBar(this)"></td>
+                              <td><input id="enter_ctrlnum4" type="text" class="task-input" placeholder="Enter Ctrl No." oninput="updateStatusBar(this)"></td>
+                              <td><input id="enter_from4" type="text" class="task-input" placeholder="Enter From" oninput="updateStatusBar(this)"></td>
+                              <td><form>
+                                <input type="text" class="task-input" id="enter_office4" list="suggestions" placeholder="Enter Office">
+                                <datalist id="suggestions">
+                                  <option value="Vice Mayor's Office">
+                                    <option value="Sangguniang Panlungsod">
+                                    <option value="CAO">
+                                    <option value="CASSO">
+                                    <option value="CADMO">
+                                    <option value="CBO">
+                                    <option value="CEPMO">
+                                    <option value="CHRMO">
+                                    <option value="CLO">
+                                    <option value="CPDSO">
+                                    <option value="CTO">
+                                    <option value="GSO">
+                                    <option value="CBAO">
+                                    <option value="CEO">
+                                    <option value="CSWDO">
+                                    <option value="HSO">
+                                    <option value="LCR">
+                                    <option value="CVAO">
+                                    <option value="DEPED">
+                                    <option value="COA">
+                                    <option value="MTCC">
+                                    <option value="RTCC">
+                                    <option value="Prosecutor's Office">
+                                    <option value="DILG-City">
+                                    <option value="BCPO">
+                                    <option value="BFP">
+                                    <option value="BJMP">
+                                    <option value="PESO">
+                                    <option value="PIO">
+                                    <option value="PLD">
+                                    <option value="PLEB">
+                                    <option value="POSD">
+                                    <option value="SSD">
+                                    <option value="PDAO">
+                                    <option value="MITD">
+                                    <option value="CCTV">
+                                    <option value="CDRRMO">
+                                    <option value="LIBRARY">
+                                    <option value="PERSONAL STAFF">
+                                </datalist>
+                              </form>
+                              </td>
+                              <td><input id="enter_sub4" type="text" class="task-input" placeholder="Enter Subject" oninput="updateStatusBar(this)"></td>
+                            </tr>
+                          </tbody>
+                          </form>
+                </table>
+              </div>
+              <button class="drawer_Undo-button" onclick="removeRow(this)"><strong>Undo</strong></button>
+              <button class="drawer_Remove-button" onclick="removeRowFromDrawer(this)"><strong>Remove</strong></button>
+              <button type="submit" form="rec_sec_item" id="save" class="submit"><strong>Save</strong></button>
+            </div>
+          </div>
+          <div class="new-item-table-container" id="new-item-table-container"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="Dashboard-Function.js"></script>
+</body>
+</html>

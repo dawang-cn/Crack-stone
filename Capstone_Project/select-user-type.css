@@ -1,0 +1,151 @@
+body {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  background-image: url('icons&images/bg_user_type.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+
+.title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.sub-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 2;
+  position: relative;
+}
+
+.select-user-type {
+  text-align: center;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 3%;
+}
+
+.user-type {
+  display: flex;
+  position: relative;
+  border: none;
+  flex-direction: column; 
+  padding: 20px;
+  margin: 25px;
+  width: 200px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 15px;
+  height: 180px;
+  cursor: pointer;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.user-type:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 5px 20px rgba(72, 187, 120, 0.5);
+  border: none;
+  background-color: #049948;
+}
+
+.select-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.select-btn:hover {
+  opacity: 0.8;
+}
+
+.select-btn:active {
+  opacity: 0.5;
+}
+
+.staff-desc {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.user-type:hover .staff-desc {
+  color: white;
+}
+
+.user-img {
+  width: 40%;
+  height: auto;
+  align-self: center;
+}
+
+.user-type.selected {
+  background-color: #049948 !important;
+  box-shadow: 0 5px 20px rgba(72, 187, 120, 0.5);
+}
+
+.user-type.selected .staff-desc {
+  color: white !important;
+}
+
+.checkmark {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: auto;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.user-button {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.select-btn {
+  background-color: #049948;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.select-btn:hover {
+  opacity: 0.8;
+}
+
+.select-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
